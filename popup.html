@@ -1,11 +1,43 @@
+<!-- popup.html -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Data Tracker</title>
+    <style>
+      h1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .data-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      .data-label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .data-value {
+        font-size: 14px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Data Tracker</h1>
-    <p>Data Sent: <span id="data-sent">0</span></p>
-    <p>Data Received: <span id="data-received">0</span></p>
+    <h1>Carbon Footprint</h1>
+    <div class="data-container">
+      <div class="data-label">Data Sent (bytes):</div>
+      <div class="data-value" id="data-sent"></div>
+    </div>
+    <div class="data-container">
+      <div class="
+      data-label">Data Received (bytes):</div>
+      <div class="data-value" id="data-received"></div>
+    </div>
+    <div class="data-container">
+      <div class="data-label">Carbon Footprint (kg CO2):</div>
+      <div class="data-value" id="carbon-footprint"></div>
+    </div>
   </body>
+  <script src="popup.js"></script>
 </html>
