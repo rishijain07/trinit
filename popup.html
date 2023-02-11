@@ -1,43 +1,51 @@
-<!-- popup.html -->
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <title>Data Usage and Carbon Footprint</title>
     <style>
-      h1 {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 10px;
+      table {
+        border-collapse: collapse;
+        width: 100%;
       }
-      .data-container {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-      }
-      .data-label {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      .data-value {
-        font-size: 14px;
-      }
-    </style>
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
   </head>
   <body>
-    <h1>Carbon Footprint</h1>
-    <div class="data-container">
-      <div class="data-label">Data Sent (bytes):</div>
-      <div class="data-value" id="data-sent"></div>
-    </div>
-    <div class="data-container">
-      <div class="
-      data-label">Data Received (bytes):</div>
-      <div class="data-value" id="data-received"></div>
-    </div>
-    <div class="data-container">
-      <div class="data-label">Carbon Footprint (kg CO2):</div>
-      <div class="data-value" id="carbon-footprint"></div>
-    </div>
+    <h2>Data Usage and Carbon Footprint</h2>
+    <table>
+      <tr>
+        <td>Data Sent:</td>
+        <td id="data-sent"></td>
+      </tr>
+      <tr>
+        <td>Data Received:</td>
+        <td id="data-received"></td>
+      </tr>
+      <tr>
+        <td>Carbon Footprint:</td>
+        <td id="carbon-footprint"></td>
+      </tr>
+    </table>
+    <h2>Data Usage and Carbon Footprint per Domain</h2>
+    <table>
+      <tr>
+        <th>Domain</th>
+        <th>Carbon Footprint</th>
+        <th>Data Sent</th>
+        <th>Data Received</th>
+      </tr>
+      <tbody id="table-body"></tbody>
+    </table>
+    <script src="popup.js"></script>
   </body>
-  <script src="popup.js"></script>
 </html>
