@@ -17,12 +17,12 @@ port.onMessage.addListener(function (msg) {
 
     const domainsData = JSON.parse(localStorage.getItem("domainsData")) || {};
 
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       var currentTab = tabs[0];
       var hostname = new URL(currentTab.url).hostname;
       const currentDomain = hostname;
       console.log(currentDomain);
-  
+
       if (!domainsData[currentDomain]) {
         domainsData[currentDomain] = {
           dataSent,
@@ -34,11 +34,11 @@ port.onMessage.addListener(function (msg) {
         domainsData[currentDomain].dataReceived += dataReceived;
         domainsData[currentDomain].carbonFootprint += carbonFootprint;
       }
-  
+
       localStorage.setItem("domainsData", JSON.stringify(domainsData));
-  
+
     });
-    
+
 
   }
 });
